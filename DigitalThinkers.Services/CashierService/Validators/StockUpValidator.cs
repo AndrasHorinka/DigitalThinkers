@@ -8,7 +8,7 @@ namespace DigitalThinkers.CashierService.Validators
 {
     public class StockUpValidator : BaseDenominationValidator
     {
-        public Result Validate(Denominations denominations)
+        public new Result Validate(Denominations denominations)
         {
             var result = new Result();
 

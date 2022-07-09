@@ -9,10 +9,12 @@ namespace DigitalThinkers.Controllers
     public class StockController : ControllerBase
     {
         private ILogger _logger;
+        private ICashierService _cashierService;
 
-        public StockController(ILogger<StockController> logger)
+        public StockController(ILogger<StockController> logger, ICashierService cashierService)
         {
             this._logger = logger;
+            this._cashierService = cashierService;
         }
 
         [HttpGet]
@@ -24,6 +26,7 @@ namespace DigitalThinkers.Controllers
         [HttpPost]
         public virtual ActionResult Index([FromBody] StockRequestDto request)
         {
+
             return Ok();
         }
     }

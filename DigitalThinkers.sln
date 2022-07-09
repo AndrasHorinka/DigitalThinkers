@@ -9,6 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CashierService", "..\Digita
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalThinkers.Common.Entities", "..\DigitalThinkers.Common\DigitalThinkers.Common.Entities\DigitalThinkers.Common.Entities.csproj", "{FC69B9E9-1D2D-4748-9D8E-FE017316AD7E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{3BA7A8A5-FA83-4B38-BD44-6BF969B6C0F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess.Main", "DataAccess.Main", "{1B3DDB67-85F6-4835-8EDD-086ED1475107}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.Main", "..\DataAccess.Main\DataAccess.Main.csproj", "{1332A07B-24E9-479F-9D6A-92D0EDE3CD74}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +33,17 @@ Global
 		{FC69B9E9-1D2D-4748-9D8E-FE017316AD7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC69B9E9-1D2D-4748-9D8E-FE017316AD7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC69B9E9-1D2D-4748-9D8E-FE017316AD7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1332A07B-24E9-479F-9D6A-92D0EDE3CD74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1332A07B-24E9-479F-9D6A-92D0EDE3CD74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1332A07B-24E9-479F-9D6A-92D0EDE3CD74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1332A07B-24E9-479F-9D6A-92D0EDE3CD74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1B3DDB67-85F6-4835-8EDD-086ED1475107} = {3BA7A8A5-FA83-4B38-BD44-6BF969B6C0F3}
+		{1332A07B-24E9-479F-9D6A-92D0EDE3CD74} = {1B3DDB67-85F6-4835-8EDD-086ED1475107}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8EB7650B-86F7-4B7B-96B2-85B34D7DE73D}

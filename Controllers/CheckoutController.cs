@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using DigitalThinkers.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -20,9 +21,11 @@ namespace DigitalThinkers.Controllers
         }
 
         [HttpPost]
-        public virtual ActionResult Index()
+        public virtual ActionResult Index(CheckoutRequestDto request)
         {
-            return Ok();
+            var response = new CheckoutResponse();
+
+            return Ok(response);
         }
     }
 }

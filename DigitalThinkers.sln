@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalThinkers", "DigitalT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashierService", "..\DigitalThinkers.Services\CashierService\CashierService.csproj", "{338895F5-9ABB-43D1-A9BD-C4AF756784A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalThinkers.Common.Entities", "..\DigitalThinkers.Common\DigitalThinkers.Common.Entities\DigitalThinkers.Common.Entities.csproj", "{FC69B9E9-1D2D-4748-9D8E-FE017316AD7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{338895F5-9ABB-43D1-A9BD-C4AF756784A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{338895F5-9ABB-43D1-A9BD-C4AF756784A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{338895F5-9ABB-43D1-A9BD-C4AF756784A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC69B9E9-1D2D-4748-9D8E-FE017316AD7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC69B9E9-1D2D-4748-9D8E-FE017316AD7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC69B9E9-1D2D-4748-9D8E-FE017316AD7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC69B9E9-1D2D-4748-9D8E-FE017316AD7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

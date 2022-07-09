@@ -1,8 +1,10 @@
 ﻿using DigitalThinkers.CashierService.Models;
+using DigitalThinkers.CashierService.Validators;
 using DigitalThinkers.Common.Entities.Extensions;
 using DigitalThinkers.DataAccess.Main;
 using DigitalThinkers.DataAccess.Main.Models;
 using System;
+using System.Linq;
 
 namespace DigitalThinkers.CashierService
 {
@@ -43,11 +45,29 @@ namespace DigitalThinkers.CashierService
         {
             var result = new DenominationsLoadResult();
 
-            if (request.Denominations == null)
+            var validator = new StockUpValidator();
+            var validationResult = validator.Validate(request.Denominations);
+            if (!validationResult.IsSuccessful)
             {
-                result.Errors.Add(new )
+                result.CopyErrorsFrom(validationResult);
+                return result;
             }
-            throw new NotImplementedException();
+
+            foreach (var money in request.Denominations.MoneyInTransfer)
+            {
+                var addMoneyResult = this._dataManager.AddMoney(money);
+                if (!addMoneyResult.IsSuccessful)
+                {
+                    result.CopyErrorsFrom(addMoneyResult);
+                    result.DenominationsFailedToLoad.MoneyInTransfer.Add(money);
+                }
+                else
+                {
+                    result.DenominationsLoaded.MoneyInTransfer.Add(money);
+                }
+            }
+
+            return result;
         }
     }
 }

@@ -3,13 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32602.291
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalThinkers.WebApi", "DigitalThinkers.Web\DigitalThinkers.csproj", "{B0AE41DB-9E40-4786-A941-71965A2EA241}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalThinkers", "DigitalThinkers.Web\DigitalThinkers.csproj", "{B0AE41DB-9E40-4786-A941-71965A2EA241}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalThinkers.Services.CashierService", "DigitalThinkers.Services\CashierService\CashierService.csproj", "{338895F5-9ABB-43D1-A9BD-C4AF756784A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CashierService", "DigitalThinkers.Services\CashierService\CashierService.csproj", "{338895F5-9ABB-43D1-A9BD-C4AF756784A6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalThinkers.Common.Entities", "DigitalThinkers.Common\DigitalThinkers.Common.Entities\DigitalThinkers.Common.Entities.csproj", "{FC69B9E9-1D2D-4748-9D8E-FE017316AD7E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalThinkers.DataAccess.Main", "DigitalThinkers.DataAccess\Main\DataAccess.Main.csproj", "{1332A07B-24E9-479F-9D6A-92D0EDE3CD74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess.Main", "DigitalThinkers.DataAccess\Main\DataAccess.Main.csproj", "{1332A07B-24E9-479F-9D6A-92D0EDE3CD74}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C78CCE40-9E69-4106-9E51-27B8646C434E}"
+	ProjectSection(SolutionItems) = preProject
+		README.txt = README.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

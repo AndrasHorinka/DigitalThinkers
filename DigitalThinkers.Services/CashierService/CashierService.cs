@@ -1,10 +1,11 @@
 ﻿using DigitalThinkers.CashierService.Models;
+using DigitalThinkers.CashierService.Models.Errors;
 using DigitalThinkers.CashierService.Validators;
+using DigitalThinkers.Common.Entities;
 using DigitalThinkers.Common.Entities.Extensions;
 using DigitalThinkers.DataAccess.Main;
 using DigitalThinkers.DataAccess.Main.Models;
-using System;
-using System.Linq;
+using System.Collections.Generic;
 
 namespace DigitalThinkers.CashierService
 {
@@ -19,7 +20,66 @@ namespace DigitalThinkers.CashierService
 
         public CheckoutResult Checkout(CheckoutRequest request)
         {
-            throw new NotImplementedException();
+            var result = new CheckoutResult();
+
+            #region Validation
+
+            var validator = new CheckoutValidator();
+            var validationResult = validator.Validate(request);
+            if (!validationResult.IsSuccessful)
+            {
+                result.CopyErrorsFrom(validationResult);
+                return result;
+            }
+
+            var sumProvided = this.GetSumOfProvidedMoney(request.Denominations);
+            if (request.Price > sumProvided)
+            {
+                result.Errors.Add(new InsufficientSumError());
+                return result;
+            }
+
+            #endregion
+
+            var addedMoney = new List<Money>();
+
+            foreach (var money in request.Denominations.MoneyInTransfer)
+            {
+                var addMoneyResult = this._dataManager.AddMoney(money);
+                if (!addMoneyResult.IsSuccessful)
+                {
+                    result.CopyErrorsFrom(addMoneyResult);
+                    break;
+                }
+
+                addedMoney.Add(money);
+            }
+
+            if (!result.IsSuccessful)
+            {
+                this.SubstractMoney(addedMoney);
+                return result;
+            }
+
+            // Get stock for currency
+            GetStockResult stockResult = this._dataManager.GetDenominationsOnStock(request.CurrencyType);
+            if (!stockResult.IsSuccessful)
+            {
+                result.CopyErrorsFrom(stockResult);
+                return result;
+            }
+
+            var returnAmount = request.Price - sumProvided;
+            var tearDownResult = this.TearDownReturnAmountToMoney(returnAmount, stockResult.AvailableStock);
+            if (!tearDownResult.IsSuccessful)
+            {
+                this.SubstractMoney(addedMoney);
+                result.CopyErrorsFrom(tearDownResult);
+
+                return result;
+            }
+
+            return result;
         }
 
         public DenominationsOnStockResult GetDenominationsOnStock()
@@ -46,7 +106,7 @@ namespace DigitalThinkers.CashierService
             var result = new DenominationsLoadResult();
 
             var validator = new StockUpValidator();
-            var validationResult = validator.Validate(request.Denominations);
+            var validationResult = validator.Validate(request);
             if (!validationResult.IsSuccessful)
             {
                 result.CopyErrorsFrom(validationResult);
@@ -69,5 +129,35 @@ namespace DigitalThinkers.CashierService
 
             return result;
         }
+
+        #region Private methods
+
+        private decimal GetSumOfProvidedMoney(Denominations denominations)
+        {
+            decimal result = 0;
+
+            foreach (var money in denominations.MoneyInTransfer)
+            {
+                result += (int)money.ValueType;
+            }
+
+            return result;
+        }
+
+        private void SubstractMoney(IList<Money> money)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private TearDownResult TearDownReturnAmountToMoney(decimal sum, Denominations availableMoney)
+        {
+            var result = new TearDownResult();
+
+
+
+            return result;
+        }
+
+        #endregion
     }
 }

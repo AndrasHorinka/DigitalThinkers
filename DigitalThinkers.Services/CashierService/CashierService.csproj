@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\DataAccess.Main\DataAccess.Main.csproj" />
     <ProjectReference Include="..\..\DigitalThinkers.Common\DigitalThinkers.Common.Entities\DigitalThinkers.Common.Entities.csproj" />
+    <ProjectReference Include="..\..\DigitalThinkers.DataAccess\Main\DataAccess.Main.csproj" />
   </ItemGroup>
 
 </Project>

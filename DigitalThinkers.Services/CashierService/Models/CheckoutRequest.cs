@@ -1,9 +1,10 @@
-﻿using DigitalThinkers.Common.Entities;
+﻿using DigitalThinkers.Common.Entities.Enumerations;
 
 namespace DigitalThinkers.CashierService.Models
 {
-    public class CheckoutRequest
+    public class CheckoutRequest : BaseRequest
     {
-        public Denominations Denominations { get; set; }
+        public decimal Price { get; set; }
+        public CurrencyType CurrencyType { get; set; }
     }
 }

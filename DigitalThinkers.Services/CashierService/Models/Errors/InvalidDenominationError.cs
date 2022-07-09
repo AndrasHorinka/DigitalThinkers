@@ -6,8 +6,14 @@ namespace CashierService.Models.Errors
     {
         public InvalidDenominationError(string description)
         {
-            base.Title = "Unknown denomination received";
+            base.Title = "Invalid denomination";
             base.Description = description;
+        }
+
+        public InvalidDenominationError()
+        {
+            base.Title = "Invalid denomination";
+            base.Description = "Unknown denomination type received";
         }
     }
 }

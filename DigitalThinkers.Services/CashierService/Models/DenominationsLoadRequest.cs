@@ -2,8 +2,7 @@
 
 namespace DigitalThinkers.CashierService.Models
 {
-    public class DenominationsLoadRequest
+    public class DenominationsLoadRequest : BaseRequest
     {
-        public Denominations Denominations { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DigitalThinkers.Common.Entities;
+using DigitalThinkers.Common.Entities.Enumerations;
 using DigitalThinkers.Common.Entities.Models;
 using DigitalThinkers.DataAccess.Main.Models;
 
@@ -29,6 +30,11 @@ namespace DigitalThinkers.DataAccess.Main
         }
 
         public GetMoneyResult GetDenominationOnStock(Money money)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public GetStockResult GetDenominationsOnStock(CurrencyType currencyType)
         {
             throw new System.NotImplementedException();
         }

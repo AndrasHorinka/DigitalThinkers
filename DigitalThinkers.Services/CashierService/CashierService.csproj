@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>DigitalThinkers.CashierService</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataAccess.Main\DataAccess.Main.csproj" />
+    <ProjectReference Include="..\..\DigitalThinkers.Common\DigitalThinkers.Common.Entities\DigitalThinkers.Common.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

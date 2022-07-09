@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.32602.291
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalThinkers", "DigitalThinkers.csproj", "{B0AE41DB-9E40-4786-A941-71965A2EA241}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashierService", "..\DigitalThinkers.Services\CashierService\CashierService.csproj", "{338895F5-9ABB-43D1-A9BD-C4AF756784A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B0AE41DB-9E40-4786-A941-71965A2EA241}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0AE41DB-9E40-4786-A941-71965A2EA241}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0AE41DB-9E40-4786-A941-71965A2EA241}.Release|Any CPU.Build.0 = Release|Any CPU
+		{338895F5-9ABB-43D1-A9BD-C4AF756784A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{338895F5-9ABB-43D1-A9BD-C4AF756784A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{338895F5-9ABB-43D1-A9BD-C4AF756784A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{338895F5-9ABB-43D1-A9BD-C4AF756784A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

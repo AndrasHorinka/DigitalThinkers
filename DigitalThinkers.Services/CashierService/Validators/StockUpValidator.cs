@@ -1,5 +1,5 @@
 ﻿using CashierService.Models.Errors;
-using DigitalThinkers.Common.Entities;
+using DigitalThinkers.CashierService.Models;
 using DigitalThinkers.Common.Entities.Extensions;
 using DigitalThinkers.Common.Entities.Models;
 using System.Linq;
@@ -8,18 +8,18 @@ namespace DigitalThinkers.CashierService.Validators
 {
     public class StockUpValidator : BaseDenominationValidator
     {
-        public new Result Validate(Denominations denominations)
+        public new Result Validate(BaseRequest request)
         {
             var result = new Result();
 
-            var baseValidationResult = base.Validate(denominations);
+            var baseValidationResult = base.Validate(request);
             if (!baseValidationResult.IsSuccessful)
             {
                 result.CopyErrorsFrom(baseValidationResult);
                 return result;
             }
 
-            if (!denominations.MoneyInTransfer.Any())
+            if (!request.Denominations.MoneyInTransfer.Any())
             {
                 result.Errors.Add(new InvalidDenominationError("No money in transfer"));
                 return result;

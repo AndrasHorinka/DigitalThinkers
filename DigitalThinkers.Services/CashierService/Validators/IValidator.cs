@@ -1,10 +1,10 @@
-﻿using DigitalThinkers.Common.Entities;
+﻿using DigitalThinkers.CashierService.Models;
 using DigitalThinkers.Common.Entities.Models;
 
 namespace DigitalThinkers.CashierService.Validators
 {
     public interface IValidator
     {
-        Result Validate(Denominations denominations);
+        Result Validate(BaseRequest request);
     }
 }

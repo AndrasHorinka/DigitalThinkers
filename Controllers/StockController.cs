@@ -1,9 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using DigitalThinkers.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace DigitalThinkers.Controllers
 {
@@ -11,5 +8,23 @@ namespace DigitalThinkers.Controllers
     [ApiController]
     public class StockController : ControllerBase
     {
+        private ILogger _logger;
+
+        public StockController(ILogger<StockController> logger)
+        {
+            this._logger = logger;
+        }
+
+        [HttpGet]
+        public virtual ActionResult Index()
+        {
+            return Ok();
+        }
+
+        [HttpPost]
+        public virtual ActionResult Index([FromBody] StockRequestDto request)
+        {
+            return Ok();
+        }
     }
 }

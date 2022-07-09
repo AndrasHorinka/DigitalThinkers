@@ -10,5 +10,6 @@ namespace DigitalThinkers.Models
         [JsonProperty("inserted")]
         public MoneyLoaded MoneyLoaded { get; set; }
 
+        public string Currency { get; set; }
     }
 }

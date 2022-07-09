@@ -3,23 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32602.291
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalThinkers", "DigitalThinkers.csproj", "{B0AE41DB-9E40-4786-A941-71965A2EA241}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalThinkers.WebApi", "DigitalThinkers.Web\DigitalThinkers.csproj", "{B0AE41DB-9E40-4786-A941-71965A2EA241}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CashierService", "..\DigitalThinkers.Services\CashierService\CashierService.csproj", "{338895F5-9ABB-43D1-A9BD-C4AF756784A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalThinkers.Services.CashierService", "DigitalThinkers.Services\CashierService\CashierService.csproj", "{338895F5-9ABB-43D1-A9BD-C4AF756784A6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalThinkers.Common.Entities", "..\DigitalThinkers.Common\DigitalThinkers.Common.Entities\DigitalThinkers.Common.Entities.csproj", "{FC69B9E9-1D2D-4748-9D8E-FE017316AD7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalThinkers.Common.Entities", "DigitalThinkers.Common\DigitalThinkers.Common.Entities\DigitalThinkers.Common.Entities.csproj", "{FC69B9E9-1D2D-4748-9D8E-FE017316AD7E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{3BA7A8A5-FA83-4B38-BD44-6BF969B6C0F3}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess.Main", "DataAccess.Main", "{1B3DDB67-85F6-4835-8EDD-086ED1475107}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess.Main", "..\DataAccess.Main\DataAccess.Main.csproj", "{1332A07B-24E9-479F-9D6A-92D0EDE3CD74}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{835FBA20-88D5-4253-AAFF-91D46FF256B9}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{FC5CC618-C2AB-4532-AF21-238FFD1D0EF0}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{9F7FF5DE-87B6-457D-A290-8CFE51A5EF09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalThinkers.DataAccess.Main", "DigitalThinkers.DataAccess\Main\DataAccess.Main.csproj", "{1332A07B-24E9-479F-9D6A-92D0EDE3CD74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,13 +36,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{B0AE41DB-9E40-4786-A941-71965A2EA241} = {9F7FF5DE-87B6-457D-A290-8CFE51A5EF09}
-		{338895F5-9ABB-43D1-A9BD-C4AF756784A6} = {835FBA20-88D5-4253-AAFF-91D46FF256B9}
-		{FC69B9E9-1D2D-4748-9D8E-FE017316AD7E} = {FC5CC618-C2AB-4532-AF21-238FFD1D0EF0}
-		{1B3DDB67-85F6-4835-8EDD-086ED1475107} = {3BA7A8A5-FA83-4B38-BD44-6BF969B6C0F3}
-		{1332A07B-24E9-479F-9D6A-92D0EDE3CD74} = {1B3DDB67-85F6-4835-8EDD-086ED1475107}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8EB7650B-86F7-4B7B-96B2-85B34D7DE73D}

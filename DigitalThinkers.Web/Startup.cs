@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DigitalThinkers.CashierService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +33,8 @@ namespace DigitalThinkers
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DigitalThinkers", Version = "v1" });
             });
+            services.AddScoped<DigitalThinkers.CashierService.ICashierService, DigitalThinkers.CashierService.CashierService>();
+            services.AddScoped<DigitalThinkers.DataAccess.Main.IDataManager, DigitalThinkers.DataAccess.Main.DataManagerCache>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
